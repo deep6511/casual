@@ -113,18 +113,10 @@ The `-r` flag is required because the file contains a list of packages.
 The trained model weights are included locally in:
 
 ```text
-models/best_model.pth
+murali/models/best_model.pth
 ```
 
 The inference script loads the weights directly from this local file.
-
-No internet connection is required to download model weights.
-
-No API key is required.
-
-No external model repository is required.
-
-No additional model download is required.
 
 ---
 
@@ -278,39 +270,9 @@ The solution does not require:
 
 ---
 
-# 9. Data Preprocessing
-
-Input `.npy` arrays are loaded directly using NumPy.
-
-The preprocessing performed during inference is intentionally minimal so that the inference distribution remains consistent with the training pipeline.
-
-The input is converted to:
-
-```text
-float32
-```
-
-and then converted into the tensor format required by the network:
-
-```text
-(H, W)
-      ↓
-(1, 1, H, W)
-```
-
-The model performs the restoration and resolution reconstruction.
-
-The final output is clipped to:
-
-```text
-[0, 1]
-```
-
-NaN and infinite values are removed before saving.
-
 ---
 
-# 10. Model Architecture
+# 9. Model Architecture
 
 The restoration network is a convolutional encoder-decoder architecture based on a U-Net-style structure.
 
@@ -330,7 +292,7 @@ The architecture is fully convolutional and operates directly on the degraded gr
 
 ---
 
-# 11. Training
+# 10. Training
 
 The training procedure used to obtain the submitted weights is provided in:
 
@@ -352,7 +314,7 @@ The training notebook contains the implementation used to generate the trained m
 
 ---
 
-# 12. Reproducing Training
+# 11. Reproducing Training
 
 To reproduce training, open:
 
@@ -376,7 +338,7 @@ Therefore, reviewers do not need to retrain the model to run inference.
 
 ---
 
-# 13. Verification
+# 12. Verification
 
 After running inference, the following properties can be checked for every output:
 
@@ -402,7 +364,7 @@ Finite: True
 
 ---
 
-# 14. Reproducibility
+# 13. Reproducibility
 
 The inference pipeline is deterministic with respect to the model weights and input data.
 
@@ -414,7 +376,7 @@ No API keys, network services, or online model repositories are required.
 
 ---
 
-# 15. Quick Start
+# 14. Quick Start
 
 For a reviewer, the complete process is:
 
@@ -422,7 +384,7 @@ For a reviewer, the complete process is:
 
 ```bash
 git clone https://github.com/deep6511/casual.git
-cd casual
+cd casual\murali
 ```
 
 ### Step 2 — Install dependencies
@@ -463,28 +425,3 @@ The complete inference interface is:
 
 ```bash
 python run.py <input-dir> <output-dir>
-```
-
-No additional arguments or configuration are required.
-
-````
-
-### One thing you should fix before submitting
-
-Your repository currently does **not** appear to contain the required `run.py`, `models/`, or `README.md`; GitHub currently shows the training notebook, requirements, and output-related files. :contentReference[oaicite:2]{index=2}
-
-Your final repository should therefore look like:
-
-```text
-casual/
-│
-├── run.py
-├── requirements.txt
-├── README.md
-│
-├── models/
-│   └── best_model.pth
-│
-└── training/
-    └── training_script_colab.ipynb
-````
