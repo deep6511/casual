@@ -19,7 +19,6 @@ The model takes a degraded low-resolution image as input and produces a restored
 
 ## Repository Structure
 
-```text
 casual/
 │
 ├── murali/
