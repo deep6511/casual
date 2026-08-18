@@ -22,15 +22,25 @@ The model takes a degraded low-resolution image as input and produces a restored
 ```text
 casual/
 │
-├── run.py
-├── requirements.txt
+├── murali/
+│   ├── run.py
+│   ├── requirements.txt
+│   │
+│   └── models/
+│       └── best_model.pth
+│
+├── images/
+│   └── output_image
+│
+├── raw_experiments/
+│   ├── biomemeicsemiconindia.ipynb
+│   ├── Other_models.txt
+│   └── semiconindia.ipynb
+│
+├── Test Outputs(drive-link).txt
 ├── README.md
-│
-├── models/
-│   └── best_model.pth
-│
-└── training/
-    └── training_script_colab.ipynb
+├── requirements.txt
+└── training_script colab.ipynb
 ````
 
 ### Important files
