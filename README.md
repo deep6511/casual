@@ -1,12 +1,7 @@
-I checked your repository. It currently has `requirements.txt`, the training notebook, and output files, but **there is no `README.md` and no visible `run.py`/`models/` in the repository root**. ([GitHub][1])
-
-Your current `requirements.txt` also contains only NumPy, Matplotlib, scikit-image, and PyTorch. ([GitHub][2])
-
-For the submission, I recommend making your README very explicit about the required inference command and directory structure.
 
 ## `README.md`
 
-Copy this entire content into a file named **`README.md`**:
+
 
 ````markdown
 # AI-Based Restoration of Degraded Semiconductor Images
