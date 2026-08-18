@@ -50,7 +50,7 @@ casual/
 * `requirements.txt`
   Python dependencies required to run the solution.
 
-* `models/best_model.pth`
+* `murali/models/best_model.pth`
   Trained restoration model weights.
 
 * `training/training_script_colab.ipynb`
@@ -97,13 +97,6 @@ Install them using:
 pip install -r requirements.txt
 ```
 
-Do NOT use:
-
-```bash
-pip install requirements.txt
-```
-
-The `-r` flag is required because the file contains a list of packages.
 
 ---
 
